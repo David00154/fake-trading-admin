@@ -1,25 +1,637 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Binharvest Trader</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crypo</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="dark">
-  <div id="app"></div>
-  <script defer src="https://s3.tradingview.com/tv.js"></script>
-  <script defer type="module" src="/src/main.js"></script>
-  <script defer src="/assets/js/jquery-3.4.1.min.js"></script>
-  <script defer src="/assets/js/popper.min.js"></script>
-  <script defer src="/assets/js/bootstrap.min.js"></script>
-  <script defer src="/assets/js/amcharts-core.min.js"></script>
-  <script defer src="/assets/js/amcharts.min.js"></script>
-  <script defer src="/assets/js/jquery.mCustomScrollbar.js"></script>
-  <script defer src="/assets/js/custom.js"></script>
+    <!-- Header -->
+    <header class="dark-bb">
+        <nav class="navbar navbar-expand-lg">
+            <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo-light.svg" alt="logo"></a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu"
+                aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
 
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-link" href="index.html">Exchange</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Markets
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="">Markets</a>
+                            <a class="dropdown-item" href="">Market Capital</a>
+                            <a class="dropdown-item" href="">Market Bar</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Dashboard
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="">Profile</a>
+                            <a class="dropdown-item" href="">Wallet</a>
+                            <a class="dropdown-item" href="">Settings</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Others
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="">Login</a>
+                            <a class="dropdown-item" href="">Sign Up</a>
+                            <a class="dropdown-item" href="">Lock</a>
+                            <a class="dropdown-item" href="">OTP Number</a>
+                            <a class="dropdown-item" href="">OTP Verify</a>
+                            <a class="dropdown-item" href="">Reset</a>
+                            <a class="dropdown-item" href="">404</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item header-custom-icon">
+                        <a class="nav-link" href="index.html#" id="changeThemeLight">
+                            <i class="icon ion-md-sunny"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item header-custom-icon">
+                        <a class="nav-link" href="index.html#" id="clickFullscreen">
+                            <i class="icon ion-md-expand"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown header-custom-icon">
+                        <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="icon ion-md-notifications"></i>
+                            <span class="circle-pulse"></span>
+                        </a>
+                        <!-- <div class="dropdown-menu">
+                            <div class="dropdown-header d-flex align-items-center justify-content-between">
+                                <p class="mb-0 font-weight-medium">6 New Notifications</p>
+                                <a href="index.html#!" class="text-muted">Clear all</a>
+                            </div>
+                            <div class="dropdown-body">
+                                <a href="index.html#!" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="icon ion-md-lock"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>Account password change</p>
+                                        <p class="sub-text text-muted">5 sec ago</p>
+                                    </div>
+                                </a>
+                                <a href="index.html#!" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="icon ion-md-alert"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>Solve the security issue</p>
+                                        <p class="sub-text text-muted">10 min ago</p>
+                                    </div>
+                                </a>
+                                <a href="index.html#!" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="icon ion-logo-android"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>Download android app</p>
+                                        <p class="sub-text text-muted">1 hrs ago</p>
+                                    </div>
+                                </a>
+                                <a href="index.html#!" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="icon ion-logo-bitcoin"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>Bitcoin price is high now</p>
+                                        <p class="sub-text text-muted">2 hrs ago</p>
+                                    </div>
+                                </a>
+                                <a href="index.html#!" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="icon ion-logo-usd"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>Payment completed</p>
+                                        <p class="sub-text text-muted">4 hrs ago</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer d-flex align-items-center justify-content-center">
+                                <a href="index.html#!">View all</a>
+                            </div>
+                        </div> -->
+                    </li>
+                    <li class="nav-item dropdown header-img-icon">
+                        <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/img/avatar.svg" alt="avatar">
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header d-flex flex-column align-items-center">
+                                <div class="figure mb-3">
+                                    <img src="assets/img/avatar.svg" alt="">
+                                </div>
+                                <div class="info text-center">
+                                    <p class="name font-weight-bold mb-0">Admin</p>
+                                    <p class="email text-muted mb-3">support@binharvest.com</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-body">
+                                <ul class="profile-nav">
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <i class="icon ion-md-person"></i>
+                                            <span>Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <i class="icon ion-md-wallet"></i>
+                                            <span>My Wallet</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <i class="icon ion-md-settings"></i>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link red">
+                                            <i class="icon ion-md-power"></i>
+                                            <span>Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End -->
+    <div class="container-fluid mtb15 no-fluid">
+        <div class="row sm-gutters">
+            <!-- <div class="col-md-3">
+            <PairSelector />
+          </div> -->
+            <div class="col-12">
+                <div class="row sm-gutters">
+                    <div class="col-12">
+                        <div class="main-chart mb15 dark-variant">
+                            <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container">
+                                <div id="tradingview_e8033"></div>
+                                <script src="https://s3.tradingview.com/tv.js"></script>
+                                <script>
+                                    new TradingView.widget(
+                                        {
+                                            "width": "100%",
+                                            "height": 550,
+                                            "symbol": "BITSTAMP:BTCUSD",
+                                            "interval": "D",
+                                            "timezone": "Etc/UTC",
+                                            "theme": "dark",
+                                            "style": "1",
+                                            "locale": "en",
+                                            "toolbar_bg": "#f1f3f6",
+                                            "enable_publishing": false,
+                                            "withdateranges": true,
+                                            "hide_side_toolbar": false,
+                                            "allow_symbol_change": true,
+                                            "show_popup_button": true,
+                                            "popup_width": "1000",
+                                            "popup_height": "650",
+                                            "container_id": "tradingview_e8033"
+                                        }
+                                    );
+                                </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="market-trade">
+                            <ul class="nav nav-pills" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="index.html#pills-trade-limit"
+                                        role="tab" aria-selected="true">Limit</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="index.html#pills-market" role="tab"
+                                        aria-selected="false">Market</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="index.html#pills-stop-limit" role="tab"
+                                        aria-selected="false">Stop Limit</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="index.html#pills-stop-market"
+                                        role="tab" aria-selected="false">Stop Market</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="pills-trade-limit" role="tabpanel">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="market-trade-buy">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn buy">Buy</button>
+                                            </form>
+                                        </div>
+                                        <div class="market-trade-sell">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn sell">Sell</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-market" role="tabpanel">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="market-trade-buy">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn buy">Buy</button>
+                                            </form>
+                                        </div>
+                                        <div class="market-trade-sell">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn sell">Sell</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-stop-limit" role="tabpanel">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="market-trade-buy">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn buy">Buy</button>
+                                            </form>
+                                        </div>
+                                        <div class="market-trade-sell">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn sell">Sell</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-stop-market" role="tabpanel">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="market-trade-buy">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button class="btn buy">Buy</button>
+                                            </form>
+                                        </div>
+                                        <div class="market-trade-sell">
+                                            <form action="wallet">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">BTC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="Amount"
+                                                        required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ETH</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="market-trade-list">
+                                                    <li><a href="index.html#!">25%</a></li>
+                                                    <li><a href="index.html#!">50%</a></li>
+                                                    <li><a href="index.html#!">75%</a></li>
+                                                    <li><a href="index.html#!">100%</a></li>
+                                                </ul>
+                                                <p>Available: <span>0 BTC = 0 USD</span></p>
+                                                <p>Volume: <span>0 BTC = 0 USD</span></p>
+                                                <p>Margin: <span>0 BTC = 0 USD</span></p>
+                                                <p>Fee: <span>0 BTC = 0 USD</span></p>
+                                                <button type="submit" class="btn sell">Sell</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="order-book mb15">
+                            <h2 class="heading">Order Book</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Price(BTC)</th>
+                                        <th>Amount(ETH)</th>
+                                        <th>Total(ETH)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="red-bg-80">
+                                        <td class="red">0.022572</td>
+                                        <td>1.253415</td>
+                                        <td>15.27648</td>
+                                    </tr>
+                                    <tr class="red-bg-60">
+                                        <td class="red">0.020371</td>
+                                        <td>1.205415</td>
+                                        <td>15.25648</td>
+                                    </tr>
+                                    <tr class="red-bg-40">
+                                        <td class="red">0.023572</td>
+                                        <td>1.645415</td>
+                                        <td>15.23648</td>
+                                    </tr>
+                                    <tr class="red-bg-20">
+                                        <td class="red">0.032378</td>
+                                        <td>1.206715</td>
+                                        <td>15.25348</td>
+                                    </tr>
+                                    <tr class="red-bg-10">
+                                        <td class="red">0.022573</td>
+                                        <td>1.262415</td>
+                                        <td>15.19648</td>
+                                    </tr>
+                                    <tr class="red-bg-8">
+                                        <td class="red">0.154377</td>
+                                        <td>1.225415</td>
+                                        <td>15.35648</td>
+                                    </tr>
+                                    <tr class="red-bg-5">
+                                        <td class="red">0.120373</td>
+                                        <td>1.285415</td>
+                                        <td>15.25648</td>
+                                    </tr>
+                                    <tr class="red-bg">
+                                        <td class="red">0.028576</td>
+                                        <td>1.291415</td>
+                                        <td>15.26448</td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="ob-heading">
+                                    <tr>
+                                        <td>
+                                            <span>Last Price</span>
+                                            0.020367
+                                        </td>
+                                        <td>
+                                            <span>USD</span>
+                                            148.65
+                                        </td>
+                                        <td class="red">
+                                            <span>Change</span>
+                                            -0.51%
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr class="green-bg">
+                                        <td class="green">0.158373</td>
+                                        <td>1.209515</td>
+                                        <td>15.23248</td>
+                                    </tr>
+                                    <tr class="green-bg-5">
+                                        <td class="green">0.020851</td>
+                                        <td>1.206245</td>
+                                        <td>15.25458</td>
+                                    </tr>
+                                    <tr class="green-bg-8">
+                                        <td class="green">0.025375</td>
+                                        <td>1.205715</td>
+                                        <td>15.65648</td>
+                                    </tr>
+                                    <tr class="green-bg-10">
+                                        <td class="green">0.020252</td>
+                                        <td>1.205495</td>
+                                        <td>15.24548</td>
+                                    </tr>
+                                    <tr class="green-bg-20">
+                                        <td class="green">0.020373</td>
+                                        <td>1.205415</td>
+                                        <td>15.25648</td>
+                                    </tr>
+                                    <tr class="green-bg-40">
+                                        <td class="green">0.020156</td>
+                                        <td>1.207515</td>
+                                        <td>15.28948</td>
+                                    </tr>
+                                    <tr class="green-bg-60">
+                                        <td class="green">0.540375</td>
+                                        <td>1.205915</td>
+                                        <td>15.25748</td>
+                                    </tr>
+                                    <tr class="green-bg-80">
+                                        <td class="green">0.020372</td>
+                                        <td>1.205415</td>
+                                        <td>15.25648</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/amcharts-core.min.js"></script>
+    <script src="assets/js/amcharts.min.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        $('tbody, .market-news ul').mCustomScrollbar({
+            theme: 'minimal',
+        });
+    </script>
 </body>
 
 </html>
